@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Index",
+    "pages/ChartPage",
+    "pages/DetailPage",
+    "pages/SettingsPage",
+    "pages/PrivacyPage",
+    "pages/FloatPage"
+  ]
+}

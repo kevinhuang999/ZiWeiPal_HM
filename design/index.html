@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZiWeiPal · UI 设计方案</title>
+<style>
+:root{
+  --ink:#33302B; --ink2:#6B5D4F; --ink3:#8A7F6C;
+  --zhusha:#9B2E23; --zhusha-dark:#6E2118; --zhusha-soft:#F2E2DA;
+  --zhi:#F8F4EC; --card:#FFFFFF; --card-alt:#F5EFE2;
+  --dailan:#425066; --dailan-soft:#E4E8F0;
+  --zhuqing:#5F7D52; --jiangzi:#8C4356; --jinzhong:#B8860B;
+  --line:#D8CFC0; --line-light:#E8E1D4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#EFE9DC;font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);padding:32px 0 80px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ============ 方案页头 ============ */
+.hero{text-align:center;margin-bottom:48px}
+.hero .kicker{font-size:12px;letter-spacing:.5em;color:var(--ink3);margin-bottom:14px}
+.hero h1{font-size:40px;font-weight:700;letter-spacing:.08em}
+.hero h1 em{font-style:normal;color:var(--zhusha)}
+.hero .sub{margin-top:12px;color:var(--ink2);font-size:15px}
+.hero .seal{display:inline-block;margin-top:18px;padding:6px 18px;border:1.5px solid var(--zhusha);color:var(--zhusha);border-radius:4px;font-size:13px;letter-spacing:.35em}
+
+/* ============ 手机壳 ============ */
+.stage{display:flex;flex-wrap:wrap;gap:36px;justify-content:center;margin-bottom:20px}
+.phone{width:375px;flex-shrink:0}
+.phone .notch{height:34px;background:var(--ink);border-radius:22px 22px 0 0;position:relative}
+.phone .notch::after{content:"";position:absolute;left:50%;top:10px;transform:translateX(-50%);width:98px;height:14px;background:#000;border-radius:8px}
+.screen{height:760px;background:var(--zhi);border-left:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0 0 22px 22px;overflow:hidden;position:relative;display:flex;flex-direction:column}
+.phone .caption{margin-top:14px;text-align:center;font-size:13px;color:var(--ink2)}
+.phone .caption b{color:var(--ink);display:block;font-size:14px;margin-bottom:3px}
+
+/* HarmonyOS 状态栏 */
+.statusbar{height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:600;color:var(--ink);flex-shrink:0}
+.statusbar .right{display:flex;gap:5px;align-items:center}
+
+/* ============ 通用组件 ============ */
+.page{flex:1;overflow:hidden;display:flex;flex-direction:column;position:relative}
+.scrollarea{flex:1;overflow-y:auto;scrollbar-width:none}
+.scrollarea::-webkit-scrollbar{display:none}
+
+/* 顶部导航 */
+.navbar{display:flex;align-items:center;height:52px;padding:0 8px 0 18px;flex-shrink:0}
+.navbar .title{font-size:20px;font-weight:700;letter-spacing:.06em}
+.navbar .iconbtn{width:36px;height:36px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--ink2);border:1px solid var(--line-light);background:var(--card)}
+
+/* 分段控件 */
+.seg{display:flex;background:var(--card-alt);border-radius:12px;padding:4px;margin:0 18px;flex-shrink:0}
+.seg .opt{flex:1;text-align:center;padding:8px 0;font-size:14px;color:var(--ink2);border-radius:9px;cursor:pointer;transition:all .25s ease;letter-spacing:.05em}
+.seg .opt.on{background:var(--card);color:var(--zhusha);font-weight:700;box-shadow:0 1px 4px rgba(51,48,43,.1)}
+
+/* 主按钮 */
+.btn-primary{background:var(--zhusha);color:#fff;border-radius:26px;height:50px;font-size:17px;font-weight:600;letter-spacing:.14em;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(155,46,35,.28)}
+.btn-ghost{background:var(--card);color:var(--ink2);border:1px solid var(--line);border-radius:26px;height:44px;font-size:15px;display:flex;align-items:center;justify-content:center}
+
+/* 卡片 */
+.card{background:var(--card);border-radius:16px;box-shadow:0 2px 8px rgba(51,48,43,.06);margin:0 18px 14px}
+.card .cardhead{display:flex;align-items:center;gap:8px;padding:14px 16px 0;font-size:13px;font-weight:700;color:var(--zhusha)}
+.card .cardhead::before{content:"";width:4px;height:14px;border-radius:2px;background:var(--zhusha)}
+.card .cardbody{padding:12px 16px 16px}
+
+/* ============ 页1 首页 ============ */
+.hero-brand{display:flex;flex-direction:column;align-items:center;padding:28px 0 6px}
+.hero-brand .logo{width:76px;height:76px;border-radius:38px;background:radial-gradient(circle at 32% 28%, #C04A3C, var(--zhusha) 58%, var(--zhusha-dark));display:flex;align-items:center;justify-content:center;color:#F8E9C8;font-size:34px;font-weight:700;box-shadow:0 8px 20px rgba(155,46,35,.32);border:2px solid rgba(248,244,236,.55)}
+.hero-brand .name{margin-top:14px;font-size:22px;font-weight:700;letter-spacing:.24em}
+.hero-brand .slogan{margin-top:5px;font-size:12px;color:var(--ink3);letter-spacing:.16em}
+
+.formcard{padding:4px 0 6px}
+.field{display:flex;align-items:center;padding:13px 16px;min-height:52px}
+.field+.field{border-top:1px solid var(--line-light)}
+.field .flabel{font-size:15px;color:var(--ink2);width:64px;flex-shrink:0}
+.seg2{display:flex;background:var(--card-alt);border-radius:9px;padding:3px}
+.seg2 .opt{padding:6px 14px;font-size:13px;color:var(--ink2);border-radius:7px}
+.seg2 .opt.on{background:var(--card);color:var(--zhusha);font-weight:700;box-shadow:0 1px 3px rgba(51,48,43,.12)}
+.datewheel{flex:1;display:flex;align-items:center;justify-content:space-between;gap:2px}
+.datewheel .num{font-size:21px;font-weight:600;font-variant-numeric:tabular-nums}
+.datewheel .unit{font-size:12px;color:var(--ink3)}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:9px;background:var(--card)}
+.stepper .sbtn{width:34px;height:36px;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--ink2)}
+.stepper .sval{min-width:44px;text-align:center;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;border-left:1px solid var(--line-light);border-right:1px solid var(--line-light);align-self:stretch;display:flex;align-items:center;justify-content:center}
+.lunartip{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 0 2px;font-size:12px;color:var(--jinzhong)}
+
+.submitwrap{padding:20px 32px 8px}
+.recent{padding:2px 0 8px}
+.recent .row{display:flex;align-items:center;padding:11px 16px}
+.recent .row .who{flex:1}
+.recent .row .who b{font-size:15px;font-weight:600}
+.recent .row .who span{display:block;font-size:12px;color:(--ink3);color:var(--ink3);margin-top:2px}
+.recent .row .arrow{color:var(--line);font-size:18px}
+.homefoot{padding:2px 0 14px;text-align:center;font-size:11px;color:var(--ink3);letter-spacing:.08em}
+
+/* ============ 页2 盘面 ============ */
+.chart-summary{padding:13px 16px}
+.chart-summary .row1{display:flex;align-items:baseline;gap:8px}
+.chart-summary .gz{font-size:17px;font-weight:700;letter-spacing:.02em}
+.chart-summary .sex{font-size:11px;padding:1.5px 8px;border-radius:9px;background:var(--dailan-soft);color:var(--dailan)}
+.chart-summary .row2{margin-top:5px;font-size:12px;color:var(--ink2)}
+.chart-summary .row2 .dot{margin:0 7px;color:var(--line)}
+.chart-summary .chips{display:flex;gap:6px;margin-top:9px;flex-wrap:wrap}
+.chip{font-size:11px;padding:3px 9px;border-radius:11px;background:var(--card-alt);color:var(--ink2)}
+.chip.zhu{background:var(--zhusha-soft);color:var(--zhusha)}
+.chip.blue{background:var(--dailan-soft);color:var(--dailan)}
+.chip.green{background:#E8EFE3;color:var(--zhuqing)}
+
+/* 十二宫经典布局：中宫信息 + 外圈12宫 */
+.board{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);gap:5px;margin:4px 14px 8px;flex:1;min-height:0}
+.cell{background:var(--card);border:1px solid var(--line-light);border-radius:8px;padding:5px 6px 4px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+.cell.sel{border:1.5px solid var(--zhusha);box-shadow:0 0 0 2.5px rgba(155,46,35,.14)}
+.cell.sf{border:1.5px solid var(--dailan);background:#FBFAF6}
+.cell .chead{display:flex;align-items:center;gap:4px}
+.cell .chead .pname{font-size:11.5px;font-weight:700;color:var(--ink2)}
+.cell .chead .pbranch{font-size:9.5px;color:var(--ink3)}
+.cell .chead .pstem{margin-left:auto;font-size:9px;color:var(--jinzhong)}
+.cell .stars{margin-top:3px;display:flex;flex-direction:column;gap:1.5px}
+.cell .stars .star{font-size:12px;line-height:1.25;white-space:nowrap}
+.cell .stars .star b{font-weight:600}
+.cell .stars .star .br{font-size:9px;color:var(--ink3)}
+.cell .stars .star .hx{display:inline-block;font-size:9px;border-radius:3px;padding:0 2.5px;color:#fff;margin-left:2px}
+.hx.lu{background:var(--zhusha)} .hx.quan{background:var(--dailan)} .hx.ke{background:var(--zhuqing)} .hx.ji{background:var(--jiangzi)}
+.cell .aux{margin-top:2px;font-size:9.5px;color:var(--ink2);line-height:1.4}
+.cell .daxian{position:absolute;top:5px;right:6px;font-size:8.5px;color:var(--zhusha);opacity:.85}
+.cell .mingshen{position:absolute;bottom:4px;right:6px;display:flex;gap:3px}
+.tag-mini{font-size:8.5px;border-radius:3px;padding:.5px 3px;color:#fff}
+.tag-mini.ming{background:var(--zhusha)} .tag-mini.shen{background:var(--zhuqing)}
+
+/* 中宫 */
+.center{grid-column:2/4;grid-row:2/4;background:linear-gradient(160deg,#FDFAF3,#F4EBDC);border:1.5px solid var(--line);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;position:relative;overflow:hidden}
+.center::before{content:"";position:absolute;inset:6px;border:1px solid var(--line-light);border-radius:8px;pointer-events:none}
+.center .bigstar{width:34px;height:34px;border-radius:17px;background:radial-gradient(circle at 32% 28%, #C04A3C, var(--zhusha));display:flex;align-items:center;justify-content:center;color:#F8E9C8;font-size:15px;font-weight:700;margin-bottom:4px}
+.center .ju{font-size:13px;font-weight:700;letter-spacing:.1em}
+.center .zhu{font-size:11px;color:var(--ink2);margin-top:2px}
+.center .gzline{margin-top:6px;font-size:10.5px;color:var(--ink3);text-align:center;line-height:1.6}
+
+/* 四化横条 */
+.sihua-bar{display:flex;gap:6px;margin:0 14px 8px;flex-shrink:0}
+.sihua-bar .sh-item{flex:1;display:flex;align-items:center;justify-content:center;gap:4px;padding:6px 0;border-radius:9px;font-size:12px;background:var(--card)}
+.sihua-bar .sh-item .n{font-weight:700}
+.sihua-bar .sh-item.lu{background:var(--zhusha-soft);color:var(--zhusha)}
+.sihua-bar .sh-item.quan{background:var(--dailan-soft);color:var(--dailan)}
+.sihua-bar .sh-item.ke{background:#E8EFE3;color:var(--zhuqing)}
+.sihua-bar .sh-item.ji{background:#F3E3E8;color:var(--jiangzi)}
+.sihua-bar .sh-item .star-s{opacity:.75;font-size:11px}
+
+/* 底部操作 */
+.chart-actions{display:flex;gap:12px;margin:2px 18px 14px;flex-shrink:0}
+.chart-actions .btn-primary{flex:1.4}
+.chart-actions .btn-ghost{flex:1}
+
+/* Toast */
+.toast{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);background:rgba(51,48,43,.92);color:#F8F4EC;font-size:12.5px;padding:9px 16px;border-radius:19px;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.toast .tico{color:#F8E9C8}
+
+/* ============ 页3 详情 ============ */
+.detail-hero{margin:6px 18px 14px;background:linear-gradient(150deg,#FDFAF3,#F3EADC);border:1px solid var(--line);border-radius:18px;padding:20px 18px;position:relative;overflow:hidden}
+.detail-hero::after{content:"紫";position:absolute;right:-14px;top:-22px;font-size:110px;color:rgba(155,46,35,.06);font-weight:700}
+.detail-hero .tagrow{display:flex;gap:6px;margin-bottom:10px}
+.tag{font-size:11px;padding:3px 10px;border-radius:11px}
+.tag.solid{background:var(--zhusha);color:#fff}
+.tag.soft{background:var(--zhusha-soft);color:var(--zhusha)}
+.tag.green{background:#E8EFE3;color:var(--zhuqing)}
+.detail-hero h2{font-size:26px;font-weight:700;letter-spacing:.05em}
+.detail-hero h2 .zhi{font-size:15px;color:var(--ink3);font-weight:400;margin-left:6px}
+.detail-hero .gz{margin-top:6px;font-size:12.5px;color:var(--jinzhong)}
+.detail-hero .sf{margin-top:10px;font-size:12px;color:var(--dailan)}
+
+.starrow{display:flex;align-items:center;padding:11px 16px}
+.starrow+.starrow{border-top:1px solid var(--line-light)}
+.starrow .sname{font-size:17px;font-weight:600;width:76px}
+.starrow .sbri{font-size:12px;color:var(--ink3);width:26px}
+.starrow .shua{font-size:11px;border-radius:9px;padding:1.5px 8px}
+.starrow .sattr{margin-left:auto;font-size:11px;color:var(--ink3);text-align:right;line-height:1.5}
+.empty-star{padding:16px;font-size:14px;color:var(--ink3);text-align:center}
+
+.kv{display:flex;gap:10px;padding:11px 16px}
+.kv+.kv{border-top:1px solid var(--line-light)}
+.kv .k{font-size:13px;color:var(--ink3);width:70px;flex-shrink:0}
+.kv .v{font-size:13.5px;color:var(--ink)}
+
+/* ============ 页4 设置 ============ */
+.setgroup{padding:2px 0 4px}
+.field-switch{display:flex;align-items:center;padding:13px 16px}
+.field-switch+.field-switch{border-top:1px solid var(--line-light)}
+.field-switch .flabel{flex:1;font-size:15px}
+.field-switch .fsub{display:block;font-size:11.5px;color:var(--ink3);margin-top:3px}
+.toggle{width:50px;height:29px;border-radius:15px;background:#D9D2C4;position:relative;flex-shrink:0}
+.toggle.on{background:var(--zhusha)}
+.toggle::after{content:"";position:absolute;top:2.5px;left:2.5px;width:24px;height:24px;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2);transition:left .25s ease}
+.toggle.on::after{left:23.5px}
+.cityrow{display:flex;align-items:center;padding:13px 16px}
+.cityrow .flabel{flex:1;font-size:15px}
+.cityrow .cval{font-size:14px;color:var(--zhusha);font-weight:600}
+.cityrow .cval::after{content:" ›";color:var(--line);font-weight:400}
+
+/* ============ 说明区块 ============ */
+.section{margin-top:56px}
+.section .stitle{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+.section .stitle h2{font-size:22px;font-weight:700}
+.section .stitle span{font-size:12px;color:var(--ink3);letter-spacing:.2em}
+.tokenbar{display:flex;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(51,48,43,.08);border:1px solid var(--line-light)}
+.tokenbar .tk{flex:1;padding:0}
+.tokenbar .tk .sw{height:56px}
+.tokenbar .tk .nm{padding:8px 4px;text-align:center;background:#fff}
+.tokenbar .tk .nm b{display:block;font-size:12px}
+.tokenbar .tk .nm span{font-size:10px;color:var(--ink3);font-family:Consolas,monospace}
+.spec{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.spec .card{margin:0}
+.spec table{width:100%;border-collapse:collapse;font-size:13px}
+.spec th{text-align:left;font-size:11px;color:var(--ink3);font-weight:400;letter-spacing:.15em;padding:4px 12px 10px}
+.spec td{padding:9px 12px;border-top:1px solid var(--line-light);vertical-align:top}
+.spec td.k{color:var(--ink2);white-space:nowrap;width:104px}
+.type-scale{display:flex;align-items:baseline;gap:18px;padding:6px 4px 2px;flex-wrap:wrap}
+.ts{display:flex;flex-direction:column;gap:4px}
+.ts .demo{color:var(--ink)}
+.ts .lab{font-size:10px;color:var(--ink3);font-family:Consolas,monospace}
+</style>
+</head>
+<body>
+
+<!-- ======================================================= -->
+<div class="wrap">
+
+<div class="hero">
+  <div class="kicker">ZIWEIPAL · HARMONYOS</div>
+  <h1>紫微排盘 <em>·</em> 全新界面设计方案</h1>
+  <div class="sub">配色沿用已拍板的「古纸朱砂」——本次重做布局、组件与信息层级</div>
+  <div class="seal">古纸朱砂 v2</div>
+</div>
+
+<!-- ======================================================= -->
+<div class="section">
+  <div class="stitle"><h2>四页高保真稿</h2><span>点击宫格/分段控件可交互预览</span></div>
+  <div class="stage">
+
+  <!-- ===================== 页1 首页 ===================== -->
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="screen">
+      <div class="statusbar"><span>9:41</span><span class="right">ᯤ 🔋</span></div>
+      <div class="page">
+        <div class="scrollarea">
+          <div class="hero-brand">
+            <div class="logo">紫</div>
+            <div class="name">紫微排盘</div>
+            <div class="slogan">斗数纲目 · 排盘对照</div>
+            <div style="position:absolute;top:22px;right:20px" class="iconbtn">⚙</div>
+          </div>
+
+          <div class="card formcard">
+            <div class="field">
+              <span class="flabel">历法</span>
+              <div class="seg2" style="flex:1">
+                <div class="opt on">公历</div><div class="opt">农历</div>
+              </div>
+            </div>
+            <div class="field">
+              <span class="flabel">生辰</span>
+              <div class="datewheel">
+                <span class="num">1987</span><span class="unit">年</span>
+                <span class="num">6</span><span class="unit">月</span>
+                <span class="num">1</span><span class="unit">日</span>
+                <span class="num">18</span><span class="unit">时</span>
+              </div>
+            </div>
+            <div class="field" style="min-height:46px">
+              <span class="flabel">性别</span>
+              <div class="seg2">
+                <div class="opt on">男</div><div class="opt">女</div>
+              </div>
+              <div style="flex:1"></div>
+              <span class="unit" style="font-size:11px;color:var(--ink3)">农历五月初一 · 丁卯年</span>
+            </div>
+          </div>
+
+          <div class="submitwrap">
+            <div class="btn-primary">开 始 排 盘</div>
+          </div>
+
+          <div class="card recent" style="margin-top:8px">
+            <div class="cardhead">最近排盘</div>
+            <div class="row"><div class="who"><b>例19 · 倪师讲义</b><span>1961-03-05 戌时 · 女 · 命宫午</span></div><div class="arrow">›</div></div>
+            <div class="row"><div class="who"><b>自测盘</b><span>1987-06-01 酉时 · 男 · 水二局</span></div><div class="arrow">›</div></div>
+          </div>
+
+          <div class="homefoot">全程离线 · 数据不出本机</div>
+        </div>
+      </div>
+    </div>
+    <div class="caption"><b>P1 · 首页 / 输入生辰</b>品牌头 + 单卡表单 + 最近记录</div>
+  </div>
+
+  <!-- ===================== 页2 盘面 ===================== -->
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="screen">
+      <div class="statusbar"><span>9:41</span><span class="right">ᯤ 🔋</span></div>
+      <div class="page">
+        <div class="navbar">
+          <div class="iconbtn">‹</div>
+          <div class="title" style="margin-left:6px">命盘</div>
+          <div style="flex:1"></div>
+          <div class="iconbtn" style="margin-right:18px">⚙</div>
+        </div>
+
+        <div class="card chart-summary">
+          <div class="row1">
+            <span class="gz">辛丑年 癸辰月 丙申日 戊戌时</span>
+            <span class="sex">女</span>
+          </div>
+          <div class="row2">农历一九六一年正月十九<span class="dot">·</span>金四局<span class="dot">·</span>命主破军 身主天相</div>
+          <div class="chips">
+            <span class="chip zhu">命宫 · 午</span>
+            <span class="chip green">身宫 · 寅</span>
+            <span class="chip blue">紫微在子</span>
+          </div>
+        </div>
+
+        <div class="seg" style="margin-bottom:10px">
+          <div class="opt on">本命</div><div class="opt">大限</div><div class="opt">流年</div>
+        </div>
+
+        <div class="board">
+          <!-- 第0行: 巳 午 未 申 -->
+          <div class="cell"><div class="chead"><span class="pname">兄弟</span><span class="pbranch">巳</span><span class="pstem">癸</span></div><div class="stars"><span class="star"><b>廉贞</b><span class="br">陷</span></span><span class="star"><b>太阴</b><span class="br">陷</span></span></div></div>
+          <div class="cell sel"><div class="chead"><span class="pname">命宫</span><span class="pbranch">午</span><span class="pstem">甲</span></div><div class="daxian">4-13</div><div class="stars"><span class="star"><b>贪狼</b><span class="br">旺</span></span></div><div class="aux">左辅 天魁</div><div class="mingshen"><span class="tag-mini ming">命</span></div></div>
+          <div class="cell"><div class="chead"><span class="pname">父母</span><span class="pbranch">未</span><span class="pstem">乙</span></div><div class="daxian">14-23</div><div class="stars"><span class="star"><b>天同</b><span class="br">陷</span></span><span class="star"><b>巨门</b><span class="br">不</span></span></div></div>
+          <div class="cell sf"><div class="chead"><span class="pname">福德</span><span class="pbranch">申</span><span class="pstem">丙</span></div><div class="daxian">24-33</div><div class="stars"><span class="star"><b>武曲</b><span class="br">得</span></span><span class="star"><b>天相</b><span class="br">庙</span></span></div><div class="aux">右弼 陀罗 铃星</div></div>
+
+          <!-- 第1行: 辰 [中宫] 酉 -->
+          <div class="cell sf"><div class="chead"><span class="pname">夫妻</span><span class="pbranch">辰</span><span class="pstem">壬</span></div><div class="daxian">104-113</div><div class="stars"><span class="star"><b>天府</b><span class="br">庙</span></span></div></div>
+          <div class="center">
+            <div class="bigstar">紫</div>
+            <div class="ju">金四局</div>
+            <div class="zhu">命主破军 · 身主天相</div>
+            <div class="gzline">辛丑 · 癸辰 · 丙申 · 戊戌<br>顺行 · 4 岁起运</div>
+          </div>
+          <div class="cell sf"><div class="chead"><span class="pname">田宅</span><span class="pbranch">酉</span><span class="pstem">丁</span></div><div class="daxian">34-43</div><div class="stars"><span class="star"><b>太阳</b><span class="br">平</span><span class="hx quan">权</span></span><span class="star"><b>天梁</b><span class="br">陷</span></span></div><div class="aux">地劫 禄存</div></div>
+
+          <!-- 第2行: 卯 [中宫] 戌 -->
+          <div class="cell sf"><div class="chead"><span class="pname">子女</span><span class="pbranch">卯</span><span class="pstem">辛</span></div><div class="daxian">94-103</div><div class="stars"><span class="star" style="color:var(--ink3)">（空宫）</span></div></div>
+          <div class="cell sf"><div class="chead"><span class="pname">官禄</span><span class="pbranch">戌</span><span class="pstem">戊</span></div><div class="daxian">44-53</div><div class="stars"><span class="star"><b>七杀</b><span class="br">庙</span></span></div><div class="aux">擎羊</div></div>
+
+          <!-- 第3行: 寅 丑 子 亥 -->
+          <div class="cell sf"><div class="chead"><span class="pname">财帛</span><span class="pbranch">寅</span><span class="pstem">庚</span></div><div class="daxian">84-93</div><div class="stars"><span class="star"><b>破军</b><span class="br">得</span></span></div><div class="aux">文曲 天钺</div><div class="mingshen"><span class="tag-mini shen">身</span></div></div>
+          <div class="cell"><div class="chead"><span class="pname">疾厄</span><span class="pbranch">丑</span><span class="pstem">辛</span></div><div class="daxian">74-83</div><div class="stars"><span class="star" style="color:var(--ink3)">（空宫）</span></div><div class="aux">地空 火星</div></div>
+          <div class="cell sf"><div class="chead"><span class="pname">迁移</span><span class="pbranch">子</span><span class="pstem">庚</span></div><div class="daxian">64-73</div><div class="stars"><span class="star"><b>紫微</b><span class="br">旺</span></span></div><div class="aux">文昌</div></div>
+          <div class="cell"><div class="chead"><span class="pname">仆役</span><span class="pbranch">亥</span><span class="pstem">己</span></div><div class="daxian">54-63</div><div class="stars"><span class="star"><b>天机</b><span class="br">平</span></span></div><div class="aux">天马</div></div>
+        </div>
+
+        <div class="sihua-bar">
+          <div class="sh-item lu"><span class="star-s">巨门</span><span class="n">禄</span></div>
+          <div class="sh-item quan"><span class="star-s">太阳</span><span class="n">权</span></div>
+          <div class="sh-item ke"><span class="star-s">文曲</span><span class="n">科</span></div>
+          <div class="sh-item ji"><span class="star-s">文昌</span><span class="n">忌</span></div>
+        </div>
+
+        <div class="chart-actions">
+          <div class="btn-ghost">导出</div>
+          <div class="btn-primary" style="flex:1.8">查看命宫详情</div>
+        </div>
+        <div class="toast"><span class="tico">◈</span>已选中 命宫（午）· 三方四正高亮</div>
+      </div>
+    </div>
+    <div class="caption"><b>P2 · 命盘页</b>经典十二宫环抱布局 + 中宫概要 + 四化横条</div>
+  </div>
+
+  <!-- ===================== 页3 详情 ===================== -->
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="screen">
+      <div class="statusbar"><span>9:41</span><span class="right">ᯤ 🔋</span></div>
+      <div class="page">
+        <div class="navbar">
+          <div class="iconbtn">‹</div>
+          <div class="title" style="margin-left:6px">宫位详情</div>
+          <div style="flex:1"></div>
+        </div>
+        <div class="scrollarea">
+          <div class="detail-hero">
+            <div class="tagrow">
+              <span class="tag solid">命宫</span>
+              <span class="tag soft">大限 4-13</span>
+              <span class="tag green">三方四正</span>
+            </div>
+            <h2>贪狼 <span class="zhi">午宫 · 庙旺之地</span></h2>
+            <div class="gz">宫干支 甲午 · 藏干 丁己</div>
+            <div class="sf">三方四正：命宫（午）、财帛（寅）、官禄（戌）、迁移（子）</div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">主星</div>
+            <div class="cardbody" style="padding-top:2px">
+              <div class="starrow">
+                <span class="sname">贪狼</span>
+                <span class="sbri">旺</span>
+                <span class="sattr">五行水 · 阴阳阳<br>化气桃花 · 主欲望</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">辅星</div>
+            <div class="cardbody" style="padding-top:2px">
+              <div class="kv"><span class="k">吉辅</span><span class="v">左辅 · 天魁</span></div>
+              <div class="kv"><span class="k">杂曜</span><span class="v">—</span></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardhead">宫位信息</div>
+            <div class="cardbody" style="padding-top:2px">
+              <div class="kv"><span class="k">宫干支</span><span class="v">甲午（藏干：丁、己）</span></div>
+              <div class="kv"><span class="k">大限</span><span class="v">4-13 岁 · 顺行</span></div>
+              <div class="kv"><span class="k">小限</span><span class="v">8 岁</span></div>
+              <div class="kv"><span class="k">长生十二神</span><span class="v">沐浴 · 博士 · 将星</span></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom:20px">
+            <div class="cardhead">神煞</div>
+            <div class="cardbody" style="padding-top:2px">
+              <div class="kv"><span class="k">神煞</span><span class="v">天魁贵人 · 咸池</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caption"><b>P3 · 宫位详情</b>命宫页样例 · 主星属性/宫位信息分组卡片</div>
+  </div>
+
+  <!-- ===================== 页4 设置 ===================== -->
+  <div class="phone">
+    <div class="notch"></div>
+    <div class="screen">
+      <div class="statusbar"><span>9:41</span><span class="right">ᯤ 🔋</span></div>
+      <div class="page">
+        <div class="navbar">
+          <div class="iconbtn">‹</div>
+          <div class="title" style="margin-left:6px">设置</div>
+          <div style="flex:1"></div>
+        </div>
+        <div class="scrollarea">
+          <div class="card setgroup">
+            <div class="field-switch">
+              <span class="flabel">真太阳时<span class="fsub">按出生地经度修正排盘时辰</span></span>
+              <div class="toggle on"></div>
+            </div>
+            <div class="field-switch">
+              <span class="flabel">出生地<span class="fsub">当前：上海 121.47°E</span></span>
+              <span class="cval" style="font-size:14px;color:var(--zhusha);font-weight:600">上海 ›</span>
+            </div>
+          </div>
+
+          <div class="card setgroup" style="margin-top:14px">
+            <div class="cardhead">排盘口径</div>
+            <div class="kv" style="padding-top:4px"><span class="k">四化流派</span><span class="v" style="color:var(--zhusha)">南派 ▾</span></div>
+            <div class="kv"><span class="k">年柱口径</span><span class="v">立春换年 ▾</span></div>
+            <div class="kv"><span class="k">闰月处理</span><span class="v">前后半月 ▾</span></div>
+            <div class="kv"><span class="k">大限起运</span><span class="v">按局起 ▾</span></div>
+          </div>
+
+          <div class="card setgroup" style="margin-top:14px">
+            <div class="cardhead">显示开关</div>
+            <div class="field-switch"><span class="flabel">显示神煞</span><div class="toggle on"></div></div>
+            <div class="field-switch"><span class="flabel">显示庙旺</span><div class="toggle on"></div></div>
+            <div class="field-switch"><span class="flabel">显示十二神</span><div class="toggle"></div></div>
+            <div class="field-switch"><span class="flabel">显示杂曜</span><div class="toggle"></div></div>
+          </div>
+
+          <div class="card setgroup" style="margin-top:14px;margin-bottom:24px">
+            <div class="cardhead">关于</div>
+            <div class="kv"><span class="k">版本</span><span class="v">v1.0.0 · 离线排盘</span></div>
+            <div class="kv"><span class="k">数据说明</span><span class="v">98/98 例对齐倪师讲义</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="caption"><b>P4 · 设置</b>分组卡片 + 开关与选择器统一行样式</div>
+  </div>
+
+  </div><!-- /stage -->
+</div><!-- /section 四页 -->
+
+<!-- ======================================================= -->
+<div class="section">
+  <div class="stitle"><h2>设计令牌</h2><span>DESIGN TOKENS · 与 Constants.ets COLORS 一一对应</span></div>
+  <div class="tokenbar">
+    <div class="tk"><div class="sw" style="background:#9B2E23"></div><div class="nm"><b>朱砂</b><span>#9B2E23</span></div></div>
+    <div class="tk"><div class="sw" style="background:#F8F4EC"></div><div class="nm"><b>古绢米白</b><span>#F8F4EC</span></div></div>
+    <div class="tk"><div class="sw" style="background:#425066"></div><div class="nm"><b>黛蓝</b><span>#425066</span></div></div>
+    <div class="tk"><div class="sw" style="background:#5F7D52"></div><div class="nm"><b>竹青</b><span>#5F7D52</span></div></div>
+    <div class="tk"><div class="sw" style="background:#8C4356"></div><div class="nm"><b>绛紫</b><span>#8C4356</span></div></div>
+    <div class="tk"><div class="sw" style="background:#B8860B"></div><div class="nm"><b>金棕</b><span>#B8860B</span></div></div>
+    <div class="tk"><div class="sw" style="background:#33302B"></div><div class="nm"><b>墨</b><span>#33302B</span></div></div>
+    <div class="tk"><div class="sw" style="background:#F5EFE2;border-bottom:1px solid #E8E1D4"></div><div class="nm"><b>米褐</b><span>#F5EFE2</span></div></div>
+  </div>
+</div>
+
+<!-- ======================================================= -->
+<div class="section">
+  <div class="stitle"><h2>组件与字号规范</h2><span>COMPONENTS &amp; TYPE SCALE</span></div>
+  <div class="spec">
+    <div class="card">
+      <div class="cardhead">字阶（三档扩展为五档）</div>
+      <div class="cardbody">
+        <div class="type-scale">
+          <div class="ts"><span class="demo" style="font-size:22px;font-weight:700">命宫</span><span class="lab">22/bold 页题</span></div>
+          <div class="ts"><span class="demo" style="font-size:17px;font-weight:600">贪狼</span><span class="lab">17/semibold 星名</span></div>
+          <div class="ts"><span class="demo" style="font-size:15px">正文/表单</span><span class="lab">15/regular</span></div>
+          <div class="ts"><span class="demo" style="font-size:12.5px;color:#6B5D4F">辅助说明</span><span class="lab">12.5/regular</span></div>
+          <div class="ts"><span class="demo" style="font-size:9.5px;color:#8A7F6C">宫内微字</span><span class="lab">9.5 宫格微注</span></div>
+        </div>
+        <table style="margin-top:14px">
+          <tr><th>层级</th><th>规则</th></tr>
+          <tr><td class="k">主星名</td><td>12px/600，亮度 9px 灰褐缀后</td></tr>
+          <tr><td class="k">四化徽章</td><td>9px 白字圆角块：禄朱砂/权黛蓝/科竹青/忌绛紫</td></tr>
+          <tr><td class="k">命/身角标</td><td>8.5px 实底小签，右下角</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardhead">组件规范</div>
+      <div class="cardbody">
+        <table>
+          <tr><th>组件</th><th>规范</th></tr>
+          <tr><td class="k">分段控件</td><td>米褐底 12px 圆角，选中白底朱砂字（替代散落胶囊钮）</td></tr>
+          <tr><td class="k">宫格</td><td>8px 圆角白卡 1px 淡线；选中=朱砂 1.5px+外圈 2.5px 光晕；三方四正=黛蓝 1.5px 描边</td></tr>
+          <tr><td class="k">中宫</td><td>2×2，米白渐变+细线内框，五行局/命主身主/四柱/起运</td></div>
+          <tr><td class="k">四化条</td><td>四等分浅色条：星名+化字，一屏看清生年四化</td></tr>
+          <tr><td class="k">开关</td><td>朱砂激活态开关，行高 52px，附副说明</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================================= -->
+<div class="section">
+  <div class="stitle"><h2>改版要点 · 新旧对照</h2><span>只动 UI 不动引擎</span></div>
+  <div class="spec">
+    <div class="card" style="grid-column:1/-1">
+      <div class="cardbody">
+        <table>
+          <tr><th style="width:130px">区域</th><th>旧版问题 → 新方案</th></tr>
+          <tr><td class="k">首页</td><td>表单五个 NumberPicker 直排、视觉松散 → 品牌头 + 单卡表单（历法/生辰/性别三行），生辰一行五组数字，农历时显示自动换算提示「农历五月初一 · 丁卯年」；新增「最近排盘」（先只存 1 条亦可）</td></tr>
+          <tr><td class="k">盘面布局</td><td>4×3 平铺 Grid，命宫无空间感 → <b>经典环抱布局</b>：中宫 2×2 放盘面概要（五行局/命主身主/四柱/顺逆+起运岁），外圈 12 宫按地支方位分布（巳午未申上行、辰…酉、卯…戌、寅丑子亥下行）。这是所有专业排盘软件的通用心智，用户零学习成本</td></tr>
+          <tr><td class="k">选中反馈</td><td>仅换边框色 → 选中宫朱砂描边+光晕+底部 Toast 提示三方四正；点宫格即选中，底部主按钮「查看详情」进入</td></tr>
+          <tr><td class="k">四化展示</td><td>四化藏在星名后缀 → 宫内星名后缀保留 + 底部四化横条双保险，扫一眼看全生年四化</td></tr>
+          <tr><td class="k">详情页</td><td>六张平铺白卡 → 顶部宫位 Hero（大字主星+徽章）+ 主星/辅星/宫位信息/神煞分组卡片，星曜属性默认展示（不再藏开关）</td></tr>
+          <tr><td class="k">设置页</td><td>全部平铺无分组 → 三组卡片：真太阳时+出生地 / 排盘口径（四化流派/年柱/闰月/大限/小限收进下拉或次级页）/ 显示开关；每项加副说明</td></tr>
+          <tr><td class="k">视图切换</td><td>三个胶囊钮占一整行 → 分段控件，切大限/流年时中宫概要联动显示当前大限段落或流年四化</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+</body>
+</html>

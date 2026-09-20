@@ -1,0 +1,45 @@
+{
+  "app": {
+    // ★ 签名材料不入库：本仓库不保存任何证书、Profile、密码。
+    //   在 DevEco Studio 打开本工程 → File > Project Structure > Signing Configs →
+    //   勾选 "Automatically generate signature" 即可生成本机签名（会写回本文件的 signingConfigs）。
+    //   生成后请勿把 signingConfigs 提交到公开仓库。
+    "signingConfigs": [],
+    "products": [
+      {
+        "name": "default",
+        "targetSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "6.1.0(23)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

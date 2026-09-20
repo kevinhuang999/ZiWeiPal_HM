@@ -1,0 +1,74 @@
+{
+  "module": {
+    "name": "entry",
+    "type": "entry",
+    "description": "$string:module_desc",
+    "mainElement": "EntryAbility",
+    "deviceTypes": [
+      "phone",
+      "tablet",
+      "2in1"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "easyGo": "$profile:easy_go",
+    // ★★ 闪控球/闪控窗（今日流日运势悬浮窗）所需权限 —— 上线前不要打开 ★★
+    //   USE_FLOAT_BALL / FLOAT_VIEW 在 SDK 的 PermissionDefinitions.json 里都是
+    //   "availableLevel": "system_basic"（系统基础级，普通应用不能直接声明）、
+    //   "provisionEnable": true（可走 Profile 的 ACL 受限权限申请）。
+    //   流程：向 agconnect@huawei.com 提受限权限申请 → 审核通过 → AGC 上把这两个权限
+    //   加进 release Profile 的 ACL 列表 → 再解开下面注释、把 floatview/FloatToday.ets
+    //   里的 GATE_ACL_APPROVED 置 true。
+    //   只解开注释但 Profile 里没有 ACL → AGC「申请 Profile」会直接失败，上架流程卡死；
+    //   那份 release Profile 被覆盖后，已经签好待提审的包也会跟着失效。
+    // "requestPermissions": [
+    //   {
+    //     "name": "ohos.permission.USE_FLOAT_BALL",
+    //     "reason": "$string:perm_float_ball_reason",
+    //     "usedScene": { "abilities": ["EntryAbility"], "when": "inuse" }
+    //   },
+    //   {
+    //     "name": "ohos.permission.FLOAT_VIEW",
+    //     "reason": "$string:perm_float_view_reason",
+    //     "usedScene": { "abilities": ["EntryAbility"], "when": "inuse" }
+    //   }
+    // ],
+    "abilities": [
+      {
+        "name": "EntryAbility",
+        "srcEntry": "./ets/entryability/EntryAbility.ets",
+        "description": "$string:EntryAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:EntryAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "ohos.want.action.home"
+            ]
+          }
+        ]
+      }
+    ],
+    "extensionAbilities": [
+      {
+        "name": "EntryBackupAbility",
+        "srcEntry": "./ets/entrybackupability/EntryBackupAbility.ets",
+        "type": "backup",
+        "exported": false,
+        "metadata": [
+          {
+            "name": "ohos.extension.backup",
+            "resource": "$profile:backup_config"
+          }
+        ],
+      }
+    ]
+  }
+}

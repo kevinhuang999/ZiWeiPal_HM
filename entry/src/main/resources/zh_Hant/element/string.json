@@ -1,0 +1,908 @@
+{
+  "string": [
+    {
+      "name": "EntryAbility_label",
+      "value": "紫微排盤"
+    },
+    {
+      "name": "module_desc",
+      "value": "紫微斗數排盤應用"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "紫微排盤"
+    },
+    {
+      "name": "app_name",
+      "value": "紫微排盤"
+    },
+    {
+      "name": "slogan",
+      "value": "斗數綱目 · 排盤對照"
+    },
+    {
+      "name": "input_birth",
+      "value": "輸入生辰"
+    },
+    {
+      "name": "calendar_type",
+      "value": "曆法"
+    },
+    {
+      "name": "birth_date",
+      "value": "生辰"
+    },
+    {
+      "name": "gender_label",
+      "value": "性別"
+    },
+    {
+      "name": "solar_calendar",
+      "value": "公曆"
+    },
+    {
+      "name": "lunar_calendar",
+      "value": "農曆"
+    },
+    {
+      "name": "lunar_label",
+      "value": "農曆%s-%s-%s"
+    },
+    {
+      "name": "male",
+      "value": "男"
+    },
+    {
+      "name": "female",
+      "value": "女"
+    },
+    {
+      "name": "year",
+      "value": "年"
+    },
+    {
+      "name": "month",
+      "value": "月"
+    },
+    {
+      "name": "day",
+      "value": "日"
+    },
+    {
+      "name": "hour",
+      "value": "時"
+    },
+    {
+      "name": "minute",
+      "value": "分"
+    },
+    {
+      "name": "leap",
+      "value": "閏月"
+    },
+    {
+      "name": "generate_chart",
+      "value": "開始排盤"
+    },
+    {
+      "name": "recent_charts",
+      "value": "最近排盤"
+    },
+    {
+      "name": "offline_note",
+      "value": "全程離線 · 數據不出本機"
+    },
+    {
+      "name": "confirm",
+      "value": "確定"
+    },
+    {
+      "name": "ming_gong",
+      "value": "命宮"
+    },
+    {
+      "name": "shen_gong",
+      "value": "身宮"
+    },
+    {
+      "name": "wu_xing_ju",
+      "value": "五行局"
+    },
+    {
+      "name": "zi_wei_xing",
+      "value": "紫微星"
+    },
+    {
+      "name": "detail",
+      "value": "查看詳情"
+    },
+    {
+      "name": "back",
+      "value": "返回"
+    },
+    {
+      "name": "settings",
+      "value": "設定"
+    },
+    {
+      "name": "native_view",
+      "value": "本命"
+    },
+    {
+      "name": "liunian_view",
+      "value": "流年"
+    },
+    {
+      "name": "daxian_view",
+      "value": "大限"
+    },
+    {
+      "name": "year_label",
+      "value": "流年年份"
+    },
+    {
+      "name": "age_label",
+      "value": "當前年齡"
+    },
+    {
+      "name": "copy_info",
+      "value": "複製信息"
+    },
+    {
+      "name": "export_image",
+      "value": "導出圖片"
+    },
+    {
+      "name": "save_ok",
+      "value": "圖片已保存到相冊"
+    },
+    {
+      "name": "save_cancel",
+      "value": "已取消保存"
+    },
+    {
+      "name": "save_fail",
+      "value": "保存失敗，請重試"
+    },
+    {
+      "name": "star_attr",
+      "value": "星曜屬性"
+    },
+    {
+      "name": "palace_stem",
+      "value": "宮幹"
+    },
+    {
+      "name": "main_stars",
+      "value": "主星"
+    },
+    {
+      "name": "aux_stars",
+      "value": "輔星"
+    },
+    {
+      "name": "palace_info",
+      "value": "宮位信息"
+    },
+    {
+      "name": "shen_sha",
+      "value": "神煞"
+    },
+    {
+      "name": "twelve_gods",
+      "value": "十二神"
+    },
+    {
+      "name": "da_xian",
+      "value": "大限"
+    },
+    {
+      "name": "xiao_xian",
+      "value": "小限"
+    },
+    {
+      "name": "san_fang",
+      "value": "三方四正"
+    },
+    {
+      "name": "liu_yue",
+      "value": "流月"
+    },
+    {
+      "name": "ming_zhu",
+      "value": "命主"
+    },
+    {
+      "name": "shen_zhu",
+      "value": "身主"
+    },
+    {
+      "name": "wuxing",
+      "value": "五行"
+    },
+    {
+      "name": "yinyang",
+      "value": "陰陽"
+    },
+    {
+      "name": "huaqi",
+      "value": "化氣"
+    },
+    {
+      "name": "cang_gan",
+      "value": "地支藏幹"
+    },
+    {
+      "name": "birth_city",
+      "value": "出生地"
+    },
+    {
+      "name": "true_solar",
+      "value": "真太陽時"
+    },
+    {
+      "name": "late_zi",
+      "value": "晚子時換日"
+    },
+    {
+      "name": "li_chun",
+      "value": "立春換年"
+    },
+    {
+      "name": "solar_term_month",
+      "value": "節氣換月"
+    },
+    {
+      "name": "sihua_school",
+      "value": "四化流派"
+    },
+    {
+      "name": "nan_pai",
+      "value": "南派"
+    },
+    {
+      "name": "zhong_zhou",
+      "value": "中州派"
+    },
+    {
+      "name": "leap_month",
+      "value": "閏月處理"
+    },
+    {
+      "name": "half_month",
+      "value": "前半月作本月、後半月作下月"
+    },
+    {
+      "name": "whole_prev",
+      "value": "整月併入前月"
+    },
+    {
+      "name": "whole_next",
+      "value": "整月併入後月"
+    },
+    {
+      "name": "da_xian_start",
+      "value": "大限起運"
+    },
+    {
+      "name": "by_ju",
+      "value": "按五行局起"
+    },
+    {
+      "name": "age_one",
+      "value": "一歲起運"
+    },
+    {
+      "name": "xiao_xian_opt",
+      "value": "小限起宮"
+    },
+    {
+      "name": "from_ming",
+      "value": "命宮起"
+    },
+    {
+      "name": "from_year_branch",
+      "value": "年支起"
+    },
+    {
+      "name": "show_shen_sha",
+      "value": "顯示神煞"
+    },
+    {
+      "name": "show_extra",
+      "value": "顯示雜曜"
+    },
+    {
+      "name": "show_brightness",
+      "value": "顯示廟旺"
+    },
+    {
+      "name": "show_twelve",
+      "value": "顯示十二神"
+    },
+    {
+      "name": "show_liunian",
+      "value": "顯示流年全量"
+    },
+    {
+      "name": "exported",
+      "value": "已導出"
+    },
+    {
+      "name": "select_city",
+      "value": "選擇出生地"
+    },
+    {
+      "name": "close",
+      "value": "關閉"
+    },
+    {
+      "name": "loading",
+      "value": "加載中…"
+    },
+    {
+      "name": "rules_group",
+      "value": "排盤口徑"
+    },
+    {
+      "name": "display_group",
+      "value": "顯示開關"
+    },
+    {
+      "name": "about_group",
+      "value": "關於"
+    },
+    {
+      "name": "tap_hint",
+      "value": "雙擊宮位看三方四正 · 再次雙擊進詳情"
+    },
+    {
+      "name": "clear_recent",
+      "value": "清空"
+    },
+    {
+      "name": "clear_confirm",
+      "value": "確定清空最近排盤？"
+    },
+    {
+      "name": "clear_recent_msg",
+      "value": "清除後不可恢復"
+    },
+    {
+      "name": "dash",
+      "value": "—"
+    },
+    {
+      "name": "choose",
+      "value": "選擇"
+    },
+    {
+      "name": "geo_none",
+      "value": "未選擇（默認不修正）"
+    },
+    {
+      "name": "geo_lon",
+      "value": "經度 %s°E"
+    },
+    {
+      "name": "true_solar_sub",
+      "value": "按出生地經度修正排盤時辰"
+    },
+    {
+      "name": "sihua_school_sub",
+      "value": "生年幹四化取星口徑"
+    },
+    {
+      "name": "year_style",
+      "value": "年柱口徑"
+    },
+    {
+      "name": "year_style_sub",
+      "value": "換年用正月初一還是立春"
+    },
+    {
+      "name": "year_lunar",
+      "value": "農曆正月初一換年"
+    },
+    {
+      "name": "month_style",
+      "value": "月柱口徑"
+    },
+    {
+      "name": "month_style_sub",
+      "value": "換月用農曆初一還是節氣"
+    },
+    {
+      "name": "month_lunar",
+      "value": "農曆初一換月"
+    },
+    {
+      "name": "late_zi_sub",
+      "value": "23 點後生人按次日日柱起盤"
+    },
+    {
+      "name": "leap_month_sub",
+      "value": "閏月生人的月序歸屬"
+    },
+    {
+      "name": "da_xian_start_sub",
+      "value": "大限起始歲數口徑"
+    },
+    {
+      "name": "xiao_xian_opt_sub",
+      "value": "小限從哪一宮起排"
+    },
+    {
+      "name": "show_shen_sha_sub",
+      "value": "天魁、鹹池等神煞名"
+    },
+    {
+      "name": "show_extra_sub",
+      "value": "額外雜曜神煞（更長列表）"
+    },
+    {
+      "name": "show_brightness_sub",
+      "value": "主星後綴廟/旺/平/陷"
+    },
+    {
+      "name": "show_twelve_sub",
+      "value": "長生十二神/博士十二神"
+    },
+    {
+      "name": "show_liunian_sub",
+      "value": "流年視圖顯示流年宮名等"
+    },
+    {
+      "name": "version_label",
+      "value": "版本"
+    },
+    {
+      "name": "version_value",
+      "value": "v1.0.0 · 全程離線排盤"
+    },
+    {
+      "name": "verify_label",
+      "value": "校驗"
+    },
+    {
+      "name": "verify_value",
+      "value": "98/98 例對齊倪師《天紀》講義"
+    },
+    {
+      "name": "city_search_hint",
+      "value": "輸入城市名或拼音搜索"
+    },
+    {
+      "name": "city_empty",
+      "value": "無匹配城市"
+    },
+    {
+      "name": "err_settings",
+      "value": "排盤失敗：無法讀取設定。"
+    },
+    {
+      "name": "err_date_range",
+      "value": "排盤失敗：日期超出 1900-2100 範圍或數據有誤。"
+    },
+    {
+      "name": "copy_ok",
+      "value": "排盤信息已複製，可粘貼到備忘錄/微信"
+    },
+    {
+      "name": "copy_fail",
+      "value": "複製失敗，請重試"
+    },
+    {
+      "name": "empty_palace",
+      "value": "（空宮）"
+    },
+    {
+      "name": "empty_gong",
+      "value": "空宮"
+    },
+    {
+      "name": "empty_palace_hint",
+      "value": "空宮無主星，借對宮星曜參斷"
+    },
+    {
+      "name": "liunian_cell",
+      "value": "流%s"
+    },
+    {
+      "name": "badge_ming",
+      "value": "命"
+    },
+    {
+      "name": "badge_shen",
+      "value": "身"
+    },
+    {
+      "name": "seal_zi",
+      "value": "紫"
+    },
+    {
+      "name": "leap_suffix",
+      "value": "（閏）"
+    },
+    {
+      "name": "palace_suffix",
+      "value": "%s宮"
+    },
+    {
+      "name": "hero_ganzhi",
+      "value": "宮幹支 %s · 藏幹 %s"
+    },
+    {
+      "name": "palace_cang",
+      "value": "%s（藏幹 %s）"
+    },
+    {
+      "name": "err_solar2lunar",
+      "value": "該日期無法換算農曆"
+    },
+    {
+      "name": "err_lunar_invalid",
+      "value": "該農曆日期不存在（如無閏月）"
+    },
+    {
+      "name": "pick_solar_year",
+      "value": "公曆 年"
+    },
+    {
+      "name": "pick_lunar_year",
+      "value": "農曆 年"
+    },
+    {
+      "name": "pick_solar_month",
+      "value": "公曆 月"
+    },
+    {
+      "name": "pick_lunar_month",
+      "value": "農曆 月"
+    },
+    {
+      "name": "pick_solar_day",
+      "value": "公曆 日"
+    },
+    {
+      "name": "pick_lunar_day",
+      "value": "農曆 日"
+    },
+    {
+      "name": "pick_hour",
+      "value": "時（0-23）"
+    },
+    {
+      "name": "pick_minute",
+      "value": "分（0-59）"
+    },
+    {
+      "name": "toast_selected",
+      "value": "已選中 %s（%s）· 三方四正高亮"
+    },
+    {
+      "name": "md_title",
+      "value": "# 紫微斗數排盤"
+    },
+    {
+      "name": "md_sizhu",
+      "value": "節氣四柱：%s"
+    },
+    {
+      "name": "md_sizhu_fn",
+      "value": "非節氣四柱：%s"
+    },
+    {
+      "name": "md_gender",
+      "value": "性別：%s"
+    },
+    {
+      "name": "md_lunar",
+      "value": "農曆：%s年%s月%s日%s"
+    },
+    {
+      "name": "md_ju",
+      "value": "五行局：%s　命主：%s　身主：%s"
+    },
+    {
+      "name": "md_minggong",
+      "value": "命宮：%s（%s）"
+    },
+    {
+      "name": "md_shengong",
+      "value": "身宮：%s（%s）"
+    },
+    {
+      "name": "md_ziwei",
+      "value": "紫微：%s　天府：%s"
+    },
+    {
+      "name": "md_palaces",
+      "value": "## 十二宮"
+    },
+    {
+      "name": "md_main",
+      "value": "- 主星："
+    },
+    {
+      "name": "md_aux",
+      "value": "- 輔星："
+    },
+    {
+      "name": "md_shensha",
+      "value": "- 神煞："
+    },
+    {
+      "name": "md_twelve",
+      "value": "- 十二神：長生運(%s) 博士(%s) 將前(%s) 歲前(%s)"
+    },
+    {
+      "name": "md_daxian",
+      "value": "- 大限：%s-%s 歲"
+    },
+    {
+      "name": "md_xiaoxian",
+      "value": "- 小限：%s虛歲"
+    },
+    {
+      "name": "tip_lunar",
+      "value": "農曆 %s月%s日 · %s年"
+    },
+    {
+      "name": "tip_solar",
+      "value": "公曆 %s"
+    },
+    {
+      "name": "pillars_line",
+      "value": "四柱：%s年 %s月 %s日 %s時"
+    },
+    {
+      "name": "chart_summary",
+      "value": "農曆%s年%s月%s日%s · %s · 命主%s 身主%s"
+    },
+    {
+      "name": "chip_ming",
+      "value": "命宮 %s"
+    },
+    {
+      "name": "chip_shen",
+      "value": "身宮 %s"
+    },
+    {
+      "name": "chip_ziwei",
+      "value": "紫微在%s"
+    },
+    {
+      "name": "center_zhuzhu",
+      "value": "命主%s · 身主%s"
+    },
+    {
+      "name": "center_ziwei",
+      "value": "紫微在%s · 天府在%s"
+    },
+    {
+      "name": "center_daxian",
+      "value": "大限命宮：%s"
+    },
+    {
+      "name": "center_liunian",
+      "value": "流年 %s 命宮：%s"
+    },
+    {
+      "name": "sf_names",
+      "value": "三方四正：%s"
+    },
+    {
+      "name": "twelve_val",
+      "value": "長生運 %s · 博士 %s · 將前 %s"
+    },
+    {
+      "name": "age_range",
+      "value": "%s-%s 歲"
+    },
+    {
+      "name": "age_val",
+      "value": "%s 歲"
+    },
+    {
+      "name": "chip_daxian",
+      "value": "大限 %s-%s"
+    },
+    {
+      "name": "star_attr_val",
+      "value": "五行%s · 陰陽%s · 化氣%s"
+    },
+    {
+      "name": "privacy_title",
+      "value": "隱私政策"
+    },
+    {
+      "name": "privacy_subtitle",
+      "value": "紫微排盤 · 數據自持"
+    },
+    {
+      "name": "privacy_collect_title",
+      "value": "我們收集什麼"
+    },
+    {
+      "name": "privacy_collect_body",
+      "value": "本應用不採集、不讀取任何個人信息（姓名、手機號、位置、通訊錄、相冊等均不收集）。"
+    },
+    {
+      "name": "privacy_permission_title",
+      "value": "權限申請"
+    },
+    {
+      "name": "privacy_permission_body",
+      "value": "本應用不申請任何系統權限，無需定位、存儲、相機、通訊錄等授權即可使用全部功能。"
+    },
+    {
+      "name": "privacy_network_title",
+      "value": "網絡與上傳"
+    },
+    {
+      "name": "privacy_network_body",
+      "value": "本應用不聯網、不上傳、不分享任何數據；所有排盤結果僅保存在本機。"
+    },
+    {
+      "name": "privacy_filing",
+      "value": "工信部 App 備案號：待填寫"
+    },
+    {
+      "name": "appearance_group",
+      "value": "外觀"
+    },
+    {
+      "name": "ui_language",
+      "value": "界面語言"
+    },
+    {
+      "name": "ui_language_sub",
+      "value": "界面文字的簡繁，不影響排盤"
+    },
+    {
+      "name": "lang_follow",
+      "value": "跟隨系統"
+    },
+    {
+      "name": "lang_hans",
+      "value": "简体中文"
+    },
+    {
+      "name": "lang_hant",
+      "value": "繁體中文"
+    },
+    {
+      "name": "md_clock",
+      "value": "鐘錶時間：%s"
+    },
+    {
+      "name": "md_truesolar",
+      "value": "真太陽時：%s（地理經度 %s°）"
+    },
+    {
+      "name": "md_doujun",
+      "value": "子年斗君：%s"
+    },
+    {
+      "name": "md_laiyin",
+      "value": "來因宮：%s[%s]"
+    },
+    {
+      "name": "md_ln_ages",
+      "value": "- 流年：%s虛歲"
+    },
+    {
+      "name": "md_diegong",
+      "value": "- 限流疊宮：%s"
+    },
+    {
+      "name": "md_none",
+      "value": "無"
+    },
+    {
+      "name": "md_dx_title",
+      "value": "## 大限流年信息"
+    },
+    {
+      "name": "md_dx_header",
+      "value": "第%s大限 %s[%s]（%s-%s年，%s-%s虛歲）"
+    },
+    {
+      "name": "md_dx_sihua",
+      "value": "大限四化：%s"
+    },
+    {
+      "name": "md_ln_line",
+      "value": "%s年[%s]（%s虛歲）流年命宮：%s；流年四化：%s"
+    },
+    {
+      "name": "perm_float_ball_reason",
+      "value": "用於在瀏覽其他應用時以懸浮球形態常駐顯示今日流日運勢"
+    },
+    {
+      "name": "perm_float_view_reason",
+      "value": "用於展開懸浮窗查看今日流日運勢詳情"
+    },
+    {
+      "name": "float_today",
+      "value": "今日運勢"
+    },
+    {
+      "name": "float_title",
+      "value": "今日流日"
+    },
+    {
+      "name": "float_liuyue",
+      "value": "流月命宮"
+    },
+    {
+      "name": "float_liuri",
+      "value": "流日命宮"
+    },
+    {
+      "name": "float_stars",
+      "value": "本命主星"
+    },
+    {
+      "name": "float_daygz",
+      "value": "日柱 %s"
+    },
+    {
+      "name": "float_shape_normal",
+      "value": "常規態"
+    },
+    {
+      "name": "float_shape_mini",
+      "value": "迷你態"
+    },
+    {
+      "name": "float_back",
+      "value": "回主界面"
+    },
+    {
+      "name": "float_toast_started",
+      "value": "已懸浮顯示，切到其他應用也停在上層"
+    },
+    {
+      "name": "float_toast_acl",
+      "value": "懸浮窗需先申請受限權限（FLOAT_VIEW / USE_FLOAT_BALL），當前未開啟"
+    },
+    {
+      "name": "float_toast_unsupported",
+      "value": "當前設備不支援懸浮窗"
+    },
+    {
+      "name": "float_toast_denied",
+      "value": "懸浮窗權限被拒，請到系統設定裡開啟"
+    },
+    {
+      "name": "float_toast_failed",
+      "value": "懸浮窗開啟失敗"
+    },
+    {
+      "name": "float_toast_running",
+      "value": "懸浮窗已在顯示"
+    },
+    {
+      "name": "float_toast_norecent",
+      "value": "請先在首頁排一次盤"
+    },
+    {
+      "name": "share_chart",
+      "value": "分享"
+    },
+    {
+      "name": "share_toast_fail",
+      "value": "分享面板開啟失敗"
+    },
+    {
+      "name": "share_toast_nocontent",
+      "value": "命盤圖還沒生成完"
+    },
+    {
+      "name": "share_toast_unsupported",
+      "value": "當前設備不支援系統分享"
+    }
+  ]
+}

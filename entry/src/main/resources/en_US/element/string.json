@@ -1,0 +1,908 @@
+{
+  "string": [
+    {
+      "name": "EntryAbility_label",
+      "value": "ZiWeiPal"
+    },
+    {
+      "name": "module_desc",
+      "value": "Zi Wei Dou Shu Charting App"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Zi Wei Dou Shu Charting"
+    },
+    {
+      "name": "app_name",
+      "value": "ZiWeiPal"
+    },
+    {
+      "name": "slogan",
+      "value": "Offline Chart · Reference"
+    },
+    {
+      "name": "input_birth",
+      "value": "Enter Birth Info"
+    },
+    {
+      "name": "calendar_type",
+      "value": "Calendar"
+    },
+    {
+      "name": "birth_date",
+      "value": "Birth"
+    },
+    {
+      "name": "gender_label",
+      "value": "Gender"
+    },
+    {
+      "name": "solar_calendar",
+      "value": "Solar"
+    },
+    {
+      "name": "lunar_calendar",
+      "value": "Lunar"
+    },
+    {
+      "name": "lunar_label",
+      "value": "Lunar %s-%s-%s"
+    },
+    {
+      "name": "male",
+      "value": "Male"
+    },
+    {
+      "name": "female",
+      "value": "Female"
+    },
+    {
+      "name": "year",
+      "value": "Y"
+    },
+    {
+      "name": "month",
+      "value": "M"
+    },
+    {
+      "name": "day",
+      "value": "D"
+    },
+    {
+      "name": "hour",
+      "value": "H"
+    },
+    {
+      "name": "minute",
+      "value": "Min"
+    },
+    {
+      "name": "leap",
+      "value": "Leap"
+    },
+    {
+      "name": "generate_chart",
+      "value": "Chart Now"
+    },
+    {
+      "name": "recent_charts",
+      "value": "Recent"
+    },
+    {
+      "name": "offline_note",
+      "value": "Fully offline · data stays on device"
+    },
+    {
+      "name": "confirm",
+      "value": "OK"
+    },
+    {
+      "name": "ming_gong",
+      "value": "Ming"
+    },
+    {
+      "name": "shen_gong",
+      "value": "Shen"
+    },
+    {
+      "name": "wu_xing_ju",
+      "value": "Wu Xing Ju"
+    },
+    {
+      "name": "zi_wei_xing",
+      "value": "ZiWei Star"
+    },
+    {
+      "name": "detail",
+      "value": "Details"
+    },
+    {
+      "name": "back",
+      "value": "Back"
+    },
+    {
+      "name": "settings",
+      "value": "Settings"
+    },
+    {
+      "name": "native_view",
+      "value": "Natal"
+    },
+    {
+      "name": "liunian_view",
+      "value": "Annual"
+    },
+    {
+      "name": "daxian_view",
+      "value": "Decade"
+    },
+    {
+      "name": "year_label",
+      "value": "Year"
+    },
+    {
+      "name": "age_label",
+      "value": "Age"
+    },
+    {
+      "name": "copy_info",
+      "value": "Copy Info"
+    },
+    {
+      "name": "export_image",
+      "value": "Export Image"
+    },
+    {
+      "name": "save_ok",
+      "value": "Image saved to gallery"
+    },
+    {
+      "name": "save_cancel",
+      "value": "Save cancelled"
+    },
+    {
+      "name": "save_fail",
+      "value": "Save failed, please retry"
+    },
+    {
+      "name": "star_attr",
+      "value": "Star Attr"
+    },
+    {
+      "name": "palace_stem",
+      "value": "Stem"
+    },
+    {
+      "name": "main_stars",
+      "value": "Major Stars"
+    },
+    {
+      "name": "aux_stars",
+      "value": "Aux Stars"
+    },
+    {
+      "name": "palace_info",
+      "value": "Palace Info"
+    },
+    {
+      "name": "shen_sha",
+      "value": "ShenSha"
+    },
+    {
+      "name": "twelve_gods",
+      "value": "12 Gods"
+    },
+    {
+      "name": "da_xian",
+      "value": "Decade"
+    },
+    {
+      "name": "xiao_xian",
+      "value": "XiaoXian"
+    },
+    {
+      "name": "san_fang",
+      "value": "San Fang"
+    },
+    {
+      "name": "liu_yue",
+      "value": "Month"
+    },
+    {
+      "name": "ming_zhu",
+      "value": "Ming Zhu"
+    },
+    {
+      "name": "shen_zhu",
+      "value": "Shen Zhu"
+    },
+    {
+      "name": "wuxing",
+      "value": "Element"
+    },
+    {
+      "name": "yinyang",
+      "value": "Yin-Yang"
+    },
+    {
+      "name": "huaqi",
+      "value": "Hua Qi"
+    },
+    {
+      "name": "cang_gan",
+      "value": "Hidden Stems"
+    },
+    {
+      "name": "birth_city",
+      "value": "Birthplace"
+    },
+    {
+      "name": "true_solar",
+      "value": "True Solar Time"
+    },
+    {
+      "name": "late_zi",
+      "value": "Late Zi Switch"
+    },
+    {
+      "name": "li_chun",
+      "value": "LiChun Year"
+    },
+    {
+      "name": "solar_term_month",
+      "value": "Solar Term Month"
+    },
+    {
+      "name": "sihua_school",
+      "value": "SiHua School"
+    },
+    {
+      "name": "nan_pai",
+      "value": "NanPai"
+    },
+    {
+      "name": "zhong_zhou",
+      "value": "ZhongZhou"
+    },
+    {
+      "name": "leap_month",
+      "value": "Leap Month"
+    },
+    {
+      "name": "half_month",
+      "value": "First half current, second half next"
+    },
+    {
+      "name": "whole_prev",
+      "value": "Merge into previous month"
+    },
+    {
+      "name": "whole_next",
+      "value": "Merge into next month"
+    },
+    {
+      "name": "da_xian_start",
+      "value": "Decade Start"
+    },
+    {
+      "name": "by_ju",
+      "value": "By Wu Xing Ju"
+    },
+    {
+      "name": "age_one",
+      "value": "From age 1"
+    },
+    {
+      "name": "xiao_xian_opt",
+      "value": "XiaoXian Start"
+    },
+    {
+      "name": "from_ming",
+      "value": "From Ming"
+    },
+    {
+      "name": "from_year_branch",
+      "value": "From YearBranch"
+    },
+    {
+      "name": "show_shen_sha",
+      "value": "Show ShenSha"
+    },
+    {
+      "name": "show_extra",
+      "value": "Show Extra"
+    },
+    {
+      "name": "show_brightness",
+      "value": "Show Brightness"
+    },
+    {
+      "name": "show_twelve",
+      "value": "Show 12 Gods"
+    },
+    {
+      "name": "show_liunian",
+      "value": "Show Full Annual"
+    },
+    {
+      "name": "exported",
+      "value": "Exported"
+    },
+    {
+      "name": "select_city",
+      "value": "Select Birthplace"
+    },
+    {
+      "name": "close",
+      "value": "Close"
+    },
+    {
+      "name": "loading",
+      "value": "Loading..."
+    },
+    {
+      "name": "rules_group",
+      "value": "Charting Rules"
+    },
+    {
+      "name": "display_group",
+      "value": "Display"
+    },
+    {
+      "name": "about_group",
+      "value": "About"
+    },
+    {
+      "name": "tap_hint",
+      "value": "Double-tap a palace for SanFangSiZheng · double-tap again for details"
+    },
+    {
+      "name": "clear_recent",
+      "value": "Clear"
+    },
+    {
+      "name": "clear_confirm",
+      "value": "Clear all recent charts?"
+    },
+    {
+      "name": "clear_recent_msg",
+      "value": "This cannot be undone"
+    },
+    {
+      "name": "dash",
+      "value": "—"
+    },
+    {
+      "name": "choose",
+      "value": "Select"
+    },
+    {
+      "name": "geo_none",
+      "value": "Not set (no correction)"
+    },
+    {
+      "name": "geo_lon",
+      "value": "Longitude %s°E"
+    },
+    {
+      "name": "true_solar_sub",
+      "value": "Adjust hour by birthplace longitude"
+    },
+    {
+      "name": "sihua_school_sub",
+      "value": "Star set derived from year stem"
+    },
+    {
+      "name": "year_style",
+      "value": "Year Pillar Rule"
+    },
+    {
+      "name": "year_style_sub",
+      "value": "New year by lunar 1st or LiChun"
+    },
+    {
+      "name": "year_lunar",
+      "value": "Lunar 1st day of year"
+    },
+    {
+      "name": "month_style",
+      "value": "Month Pillar Rule"
+    },
+    {
+      "name": "month_style_sub",
+      "value": "New month by lunar 1st or solar term"
+    },
+    {
+      "name": "month_lunar",
+      "value": "Lunar 1st day of month"
+    },
+    {
+      "name": "late_zi_sub",
+      "value": "Born after 23:00 uses next day pillar"
+    },
+    {
+      "name": "leap_month_sub",
+      "value": "Month index for leap-month births"
+    },
+    {
+      "name": "da_xian_start_sub",
+      "value": "Rule for the starting age of decades"
+    },
+    {
+      "name": "xiao_xian_opt_sub",
+      "value": "Palace where XiaoXian starts"
+    },
+    {
+      "name": "show_shen_sha_sub",
+      "value": "ShenSha names such as TianKui"
+    },
+    {
+      "name": "show_extra_sub",
+      "value": "Extra stars (longer list)"
+    },
+    {
+      "name": "show_brightness_sub",
+      "value": "Miao / Wang / Ping / Xian suffix"
+    },
+    {
+      "name": "show_twelve_sub",
+      "value": "ChangSheng / BoShi twelve gods"
+    },
+    {
+      "name": "show_liunian_sub",
+      "value": "Show annual palace names in annual view"
+    },
+    {
+      "name": "version_label",
+      "value": "Version"
+    },
+    {
+      "name": "version_value",
+      "value": "v1.0.0 · fully offline"
+    },
+    {
+      "name": "verify_label",
+      "value": "Verified"
+    },
+    {
+      "name": "verify_value",
+      "value": "98/98 cases vs Ni Shi Tian Ji"
+    },
+    {
+      "name": "city_search_hint",
+      "value": "Search by city name or pinyin"
+    },
+    {
+      "name": "city_empty",
+      "value": "No matching city"
+    },
+    {
+      "name": "err_settings",
+      "value": "Chart failed: cannot read settings."
+    },
+    {
+      "name": "err_date_range",
+      "value": "Chart failed: date out of 1900-2100 or invalid."
+    },
+    {
+      "name": "copy_ok",
+      "value": "Chart copied to clipboard"
+    },
+    {
+      "name": "copy_fail",
+      "value": "Copy failed, please retry"
+    },
+    {
+      "name": "empty_palace",
+      "value": "(empty)"
+    },
+    {
+      "name": "empty_gong",
+      "value": "Empty"
+    },
+    {
+      "name": "empty_palace_hint",
+      "value": "No major star; refer to the opposite palace"
+    },
+    {
+      "name": "liunian_cell",
+      "value": "LN %s"
+    },
+    {
+      "name": "badge_ming",
+      "value": "M"
+    },
+    {
+      "name": "badge_shen",
+      "value": "S"
+    },
+    {
+      "name": "seal_zi",
+      "value": "ZW"
+    },
+    {
+      "name": "leap_suffix",
+      "value": " (leap)"
+    },
+    {
+      "name": "palace_suffix",
+      "value": "%s"
+    },
+    {
+      "name": "hero_ganzhi",
+      "value": "GanZhi %s · Stems %s"
+    },
+    {
+      "name": "palace_cang",
+      "value": "%s (stems %s)"
+    },
+    {
+      "name": "err_solar2lunar",
+      "value": "This date cannot convert to lunar"
+    },
+    {
+      "name": "err_lunar_invalid",
+      "value": "This lunar date does not exist"
+    },
+    {
+      "name": "pick_solar_year",
+      "value": "Solar Year"
+    },
+    {
+      "name": "pick_lunar_year",
+      "value": "Lunar Year"
+    },
+    {
+      "name": "pick_solar_month",
+      "value": "Solar Month"
+    },
+    {
+      "name": "pick_lunar_month",
+      "value": "Lunar Month"
+    },
+    {
+      "name": "pick_solar_day",
+      "value": "Solar Day"
+    },
+    {
+      "name": "pick_lunar_day",
+      "value": "Lunar Day"
+    },
+    {
+      "name": "pick_hour",
+      "value": "Hour (0-23)"
+    },
+    {
+      "name": "pick_minute",
+      "value": "Minute (0-59)"
+    },
+    {
+      "name": "toast_selected",
+      "value": "Selected %s (%s) · SanFang highlighted"
+    },
+    {
+      "name": "md_title",
+      "value": "# Zi Wei Dou Shu Chart"
+    },
+    {
+      "name": "md_sizhu",
+      "value": "Four Pillars (solar terms): %s"
+    },
+    {
+      "name": "md_sizhu_fn",
+      "value": "Four Pillars (lunar): %s"
+    },
+    {
+      "name": "md_gender",
+      "value": "Gender: %s"
+    },
+    {
+      "name": "md_lunar",
+      "value": "Lunar: %s-%s-%s%s"
+    },
+    {
+      "name": "md_ju",
+      "value": "WuXingJu: %s  MingZhu: %s  ShenZhu: %s"
+    },
+    {
+      "name": "md_minggong",
+      "value": "Ming Palace: %s (%s)"
+    },
+    {
+      "name": "md_shengong",
+      "value": "Shen Palace: %s (%s)"
+    },
+    {
+      "name": "md_ziwei",
+      "value": "ZiWei: %s  TianFu: %s"
+    },
+    {
+      "name": "md_palaces",
+      "value": "## Twelve Palaces"
+    },
+    {
+      "name": "md_main",
+      "value": "- Major: "
+    },
+    {
+      "name": "md_aux",
+      "value": "- Aux: "
+    },
+    {
+      "name": "md_shensha",
+      "value": "- ShenSha: "
+    },
+    {
+      "name": "md_twelve",
+      "value": "- 12 Gods: ChangSheng(%s) BoShi(%s) JiangQian(%s) SuiQian(%s)"
+    },
+    {
+      "name": "md_daxian",
+      "value": "- Decade: %s-%s"
+    },
+    {
+      "name": "md_xiaoxian",
+      "value": "- XiaoXian ages: %s"
+    },
+    {
+      "name": "tip_lunar",
+      "value": "Lunar %s/%s · %s"
+    },
+    {
+      "name": "tip_solar",
+      "value": "Solar %s"
+    },
+    {
+      "name": "pillars_line",
+      "value": "Pillars: %s · %s · %s · %s"
+    },
+    {
+      "name": "chart_summary",
+      "value": "Lunar %s-%s-%s%s · %s · Ming %s / Shen %s"
+    },
+    {
+      "name": "chip_ming",
+      "value": "Ming %s"
+    },
+    {
+      "name": "chip_shen",
+      "value": "Shen %s"
+    },
+    {
+      "name": "chip_ziwei",
+      "value": "ZiWei in %s"
+    },
+    {
+      "name": "center_zhuzhu",
+      "value": "Ming %s · Shen %s"
+    },
+    {
+      "name": "center_ziwei",
+      "value": "ZiWei %s · TianFu %s"
+    },
+    {
+      "name": "center_daxian",
+      "value": "Decade Ming: %s"
+    },
+    {
+      "name": "center_liunian",
+      "value": "Annual %s Ming: %s"
+    },
+    {
+      "name": "sf_names",
+      "value": "SanFang: %s"
+    },
+    {
+      "name": "twelve_val",
+      "value": "ChangSheng %s · BoShi %s · JiangQian %s"
+    },
+    {
+      "name": "age_range",
+      "value": "%s-%s"
+    },
+    {
+      "name": "age_val",
+      "value": "%s"
+    },
+    {
+      "name": "chip_daxian",
+      "value": "Decade %s-%s"
+    },
+    {
+      "name": "star_attr_val",
+      "value": "Element %s · Yin-Yang %s · HuaQi %s"
+    },
+    {
+      "name": "privacy_title",
+      "value": "Privacy Policy"
+    },
+    {
+      "name": "privacy_subtitle",
+      "value": "ZiWei Chart · Data Stays on Device"
+    },
+    {
+      "name": "privacy_collect_title",
+      "value": "What We Collect"
+    },
+    {
+      "name": "privacy_collect_body",
+      "value": "This app collects and reads no personal information. Name, phone number, location, contacts, and photos are never collected."
+    },
+    {
+      "name": "privacy_permission_title",
+      "value": "Permissions"
+    },
+    {
+      "name": "privacy_permission_body",
+      "value": "This app requests no system permissions. All features work without location, storage, camera, or contacts authorization."
+    },
+    {
+      "name": "privacy_network_title",
+      "value": "Network & Upload"
+    },
+    {
+      "name": "privacy_network_body",
+      "value": "This app never connects to the internet, and never uploads or shares any data. All chart results are stored only on your device."
+    },
+    {
+      "name": "privacy_filing",
+      "value": "MIIT App Filing No.: TBD"
+    },
+    {
+      "name": "appearance_group",
+      "value": "Appearance"
+    },
+    {
+      "name": "ui_language",
+      "value": "App language"
+    },
+    {
+      "name": "ui_language_sub",
+      "value": "Simplified or Traditional Chinese for app text"
+    },
+    {
+      "name": "lang_follow",
+      "value": "Follow system"
+    },
+    {
+      "name": "lang_hans",
+      "value": "简体中文"
+    },
+    {
+      "name": "lang_hant",
+      "value": "繁體中文"
+    },
+    {
+      "name": "md_clock",
+      "value": "Clock time: %s"
+    },
+    {
+      "name": "md_truesolar",
+      "value": "True solar time: %s (longitude %s)"
+    },
+    {
+      "name": "md_doujun",
+      "value": "Year DouJun: %s"
+    },
+    {
+      "name": "md_laiyin",
+      "value": "Origin palace (LaiYin): %s [%s]"
+    },
+    {
+      "name": "md_ln_ages",
+      "value": "- LiuNian ages: %s"
+    },
+    {
+      "name": "md_diegong",
+      "value": "- Limit-year stacked palace: %s"
+    },
+    {
+      "name": "md_none",
+      "value": "None"
+    },
+    {
+      "name": "md_dx_title",
+      "value": "## Major Limits and Annual Years"
+    },
+    {
+      "name": "md_dx_header",
+      "value": "Limit %s %s[%s] (%s-%s, ages %s-%s)"
+    },
+    {
+      "name": "md_dx_sihua",
+      "value": "Limit SiHua: %s"
+    },
+    {
+      "name": "md_ln_line",
+      "value": "%s [%s] (age %s) Annual life palace: %s; Annual SiHua: %s"
+    },
+    {
+      "name": "perm_float_ball_reason",
+      "value": "Keep today's daily fortune pinned on screen while using other apps"
+    },
+    {
+      "name": "perm_float_view_reason",
+      "value": "Expand the floating window to view today's daily fortune in detail"
+    },
+    {
+      "name": "float_today",
+      "value": "Today"
+    },
+    {
+      "name": "float_title",
+      "value": "Daily LiuRi"
+    },
+    {
+      "name": "float_liuyue",
+      "value": "LiuYue palace"
+    },
+    {
+      "name": "float_liuri",
+      "value": "LiuRi palace"
+    },
+    {
+      "name": "float_stars",
+      "value": "Natal stars"
+    },
+    {
+      "name": "float_daygz",
+      "value": "Day pillar %s"
+    },
+    {
+      "name": "float_shape_normal",
+      "value": "Regular"
+    },
+    {
+      "name": "float_shape_mini",
+      "value": "Mini"
+    },
+    {
+      "name": "float_back",
+      "value": "Open app"
+    },
+    {
+      "name": "float_toast_started",
+      "value": "Now floating — it stays on top over other apps"
+    },
+    {
+      "name": "float_toast_acl",
+      "value": "Floating window needs restricted permissions (FLOAT_VIEW / USE_FLOAT_BALL), not enabled yet"
+    },
+    {
+      "name": "float_toast_unsupported",
+      "value": "This device does not support floating windows"
+    },
+    {
+      "name": "float_toast_denied",
+      "value": "Floating window permission denied. Turn it on in system settings"
+    },
+    {
+      "name": "float_toast_failed",
+      "value": "Failed to start the floating window"
+    },
+    {
+      "name": "float_toast_running",
+      "value": "The floating window is already showing"
+    },
+    {
+      "name": "float_toast_norecent",
+      "value": "Run a chart on the home page first"
+    },
+    {
+      "name": "share_chart",
+      "value": "Share"
+    },
+    {
+      "name": "share_toast_fail",
+      "value": "Failed to open the share panel"
+    },
+    {
+      "name": "share_toast_nocontent",
+      "value": "The chart image is not ready yet"
+    },
+    {
+      "name": "share_toast_unsupported",
+      "value": "System share is not supported on this device"
+    }
+  ]
+}

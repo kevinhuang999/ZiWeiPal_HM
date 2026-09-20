@@ -1,0 +1,12 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "紫微排盘"
+    },
+    {
+      "name": "app_desc",
+      "value": "纯离线紫微斗数排盘"
+    }
+  ]
+}
