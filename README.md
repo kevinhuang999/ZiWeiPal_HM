@@ -1,4 +1,11 @@
-# 紫微斗数排盘 · HarmonyOS 原生版
+# ZiWeiPal_HM · 紫微斗数排盘 · HarmonyOS 原生版
+
+[中文](#中文) | [English](#english)
+
+---
+
+<a id="中文"></a>
+# 中文
 
 > 一份**纯 ArkTS / ArkUI** 的鸿蒙原生 App 完整实现：自带规则计算引擎、四语言国际化，并集成了 HarmonyOS 7 的**平行视界、应用分栏、悬浮窗（闪控球 ↔ 闪控窗）与华为分享**。
 >
@@ -72,8 +79,8 @@ tests/        自检脚本（表值对拍 / 引擎行为 / 国际化 / 繁简映
 
 ```bash
 # 1. 克隆
-git clone https://gitee.com/huang-jianhua-gitee/zi-wei-pal_-hm.git
-cd zi-wei-pal_-hm
+git clone https://github.com/kevinhuang999/ZiWeiPal_HM.git
+cd ZiWeiPal_HM
 
 # 2. 用 DevEco Studio 打开工程，先配置签名
 #    File > Project Structure > Signing Configs → 勾选 "Automatically generate signature"
@@ -124,6 +131,140 @@ python tests/gen_hant_map.py        # 重生成繁简映射表（自带术语对
 这几年做得比较多的是这几类：Office 自动化（VSTO/VBA/Python）工具定制、数据对接与 LIMS 咨询、技术陪跑。
 
 不是外包码农，是听得懂业务的自己人。有同类场景的朋友欢迎评论区聊聊，先聊清楚再动手不迟。
+
+## License
+
+MIT
+
+---
+
+<a id="english"></a>
+# English
+
+> A complete **pure ArkTS / ArkUI** native HarmonyOS app implementation: a self-contained rule computation engine, four-language i18n, and integration of HarmonyOS 7's **Parallel Vision, app split-screen, floating window (Floating Ball ↔ Floating Panel), and Huawei Share**.
+>
+> Written as a reference implementation for developers getting started with native HarmonyOS development. **Zero third-party dependencies, zero network access, zero API keys, zero data leaving the device** — all logic runs on-device.
+
+---
+
+## 1. What This Is
+
+A utility app that lays out stars and palaces according to traditional rules, built around a **table-driven rule computation engine**.
+
+The engine handles: twelve palaces, fourteen major stars, auxiliary and malefic stars, Four Transformations (two schools), brightness levels, Shen Sha, the twelve gods, decade / minor-limit / annual / monthly / daily cycles, true solar time correction, and school options (San He / Fei Xing, early/late Zi hour, leap-month conventions).
+
+The UI handles: form input → three chart views → palace detail → export image / Markdown → share.
+
+> This document describes **algorithms and engineering implementation only**. The project provides no predictive service — it is simply traditional rules expressed in code.
+
+## 2. HarmonyOS 7 Capabilities Demonstrated (4)
+
+| # | Capability | How it's implemented | Page code changes needed |
+|---|---|---|---|
+| ① | **Parallel Vision** | Declarative config in `easy_go.json` (`routerSplit` + `routerSplitOptions`) | None |
+| ② | **App split-screen (1:2 / 2:1)** | Same config, `isDraggable` enables dragging | None |
+| ③ | **Floating window (Floating Ball ↔ Floating Panel)** | `@ohos.window.floatView` (API 26): `create → setUIContext → bind → start` | One floating page |
+| ④ | **Huawei Share** | `@kit.ShareKit`: `systemShare` panel + `harmonyShare.on()` tap-to-share / AirDrop-like | A few lines |
+
+**Two notes worth calling out**:
+
+- ③'s `USE_FLOAT_BALL` / `FLOAT_VIEW` are **system_basic restricted permissions** that require an approved ACL in AGC before they can be declared. This repo ships the complete code but **disabled by default** (see `GATE_ACL_APPROVED` in `floatview/FloatToday.ets`), to avoid failing AGC Profile applications by declaring unapproved permissions.
+- ④'s **encrypted share / screenshot blocking is built into the system share panel** — no encryption code is needed on the app side.
+
+## 3. Architecture
+
+```
+UI layer (pages / components)
+    │  rendering and interaction only, no algorithms
+    ▼
+Engine layer (engine/)
+    │  pure TypeScript, no ArkUI dependency, testable under Node alone
+    ├── ZiWeiEngine.ets      Main orchestration (chart → star placement → transformations → cycles)
+    ├── AnXingTables.ets     Star placement tables (table-driven, one-to-one with the classical verses)
+    ├── CalendarUtil.ets     Gregorian / lunar / stem-branch / true solar time
+    ├── SolarTerms.ets       The 24 solar terms
+    ├── DailyFortune.ets     Daily overlay (independent of the main engine)
+    ├── OptionsStore.ets     School option persistence
+    ├── Constants.ets        Colors / constants
+    ├── TextConv.ets         Simplified → Traditional display-layer conversion
+    └── HantMap.ets          Traditional mapping table (script-generated)
+```
+
+**"The engine can be tested without the UI" is the key payoff of this structure** — `tests/engine_node/` holds a Node copy of the engine, so assertions run straight from the command line without an emulator.
+
+## 4. Directory Layout
+
+```
+entry/src/main/ets/
+  engine/     Rule computation engine (pure TS)
+  pages/      Index / ChartPage / DetailPage / SettingsPage / FloatPage / PrivacyPage
+  floatview/  Floating ball ↔ panel controller
+  share/      Huawei Share wrapper
+entry/src/main/resources/
+  base|zh_CN|en_US|zh_Hant/element/string.json   Four-language resources
+  base/profile/easy_go.json                      Parallel Vision / split-screen config
+  base/profile/main_pages.json                   Page registry
+tests/        Self-check scripts (table values / engine behavior / i18n / Traditional mapping)
+```
+
+## 5. Quick Start
+
+**Requirements**: DevEco Studio (HarmonyOS SDK 6.1.0(23) or later; this project's `targetSdkVersion` is 26.0.0).
+
+```bash
+# 1. Clone
+git clone https://github.com/kevinhuang999/ZiWeiPal_HM.git
+cd ZiWeiPal_HM
+
+# 2. Open in DevEco Studio and configure signing first
+#    File > Project Structure > Signing Configs → check "Automatically generate signature"
+
+# 3. Run on emulator or device
+#    Select the entry module → Run
+```
+
+**Command-line build** (without the IDE):
+
+```bash
+export JAVA_HOME="<DevEco>/jbr"
+export DEVECO_SDK_HOME="<DevEco>/sdk"
+export PATH="$JAVA_HOME/bin:$PATH"
+"<DevEco>/tools/node/node.exe" "<DevEco>/tools/hvigor/bin/hvigorw.js" \
+  --mode module -p product=default assembleHap --no-daemon
+```
+
+> Setting `JAVA_HOME` alone is not enough: the packaging stage looks for `java` on PATH, so `jbr/bin` must be on PATH too.
+
+## 6. Testing
+
+Both the engine and the resources have re-runnable assertions that need no device:
+
+```bash
+python tests/verify_tables.py          # 142 checks: extracts table values from source and compares them verse by verse + out-of-range scan
+node   tests/verify_engine.mjs         # 98 checks: engine behavior (incl. 38 reverse-derived samples)
+node   tests/verify_daily_fortune.mjs  # 10 checks: daily progression formulas
+node   tests/verify_wenmo.mts          # 100 checks: sample chart comparison, palace by palace
+python tests/verify_i18n.py            # four-language key alignment + dead key detection
+python tests/gen_hant_map.py           # regenerate the Traditional mapping table (with terminology check + idempotency gates)
+```
+
+**Why this level of testing matters**: during development a single wrong entry in the star table caused 40% of years to land in the wrong palace — and the engine behavior tests were **all green**, because those tests were a re-implementation of the algorithm rather than reading the source. Switching to **regex-extracting table values directly from source and comparing them against the classical verses** is what finally pinned such bugs down. **For table-driven code, tests must read the source table.**
+
+## 7. Notes
+
+- This project **is not published to Chinese app stores**. The reason is not technical: this category falls under the non-accepted types in Chinese stores (Huawei's *Non-Accepted Types*, item 28). It is kept as a **reference implementation and technical demonstration**.
+- This repo **contains no signing material** (certificates / profiles / passwords have been removed). Generate your own as described in section 5.
+- Code is for learning reference only. The project offers no predictive features; the traditional terminology involved exists only as algorithm input.
+
+## 8. About Me
+
+13 years in full-stack IT — .NET, Python, Office automation (VSTO/VBA/Python), plus hands-on AI application work (agent development). My main line of work is helping companies and teams automate repetitive labor: one-click report generation, data integration, batch document processing, and custom tooling.
+
+B.S. in Physical Chemistry, M.S. in Computational Chemistry, 13 years on the front line of laboratories (9 years in pharma + 4 years in third-party testing). Today I mostly serve pharma companies, testing labs, and laboratories — you won't need to explain SOP, compliance, sample flow, or instrument data interfaces to me.
+
+In recent years, most of my work has fallen into these categories: Office automation (VSTO/VBA/Python) custom tooling, data integration, LIMS consulting, and technical coaching.
+
+I'm not an outsourced coder — I'm the guy who understands the business. If you work in a similar setting, feel free to drop a comment. Better to talk it through clearly before writing any code.
 
 ## License
 
